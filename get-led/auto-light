@@ -1,0 +1,14 @@
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
+led = 26
+GPIO.setup(led, GPIO.OUT)
+sensorpin = 6
+GPIO.setup(sensorpin, GPIO.IN)
+
+while True:
+    if GPIO.input(sensorpin):
+        GPIO.output(led, 0)
+    else:
+        GPIO.output(led, 1)
+
